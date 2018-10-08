@@ -65,12 +65,17 @@ class App extends Component {
     const { data, display, avgCard } = this.state;
     return (
       <div className="app">
-        <DistrictSearch handleSubmit={this.handleSearch} />
-        <CompareContainer  
-          display={ display } 
-          handleCompare={this.handleCompare} 
-          avgCard={ avgCard } />
-        <CardContainer data={ data } handleCompare={this.handleCompare} />
+        <div className='header-section'>
+          <h1 className='site-title'>HeadCount</h1>
+          <DistrictSearch handleSubmit={this.handleSearch} />
+        </div>
+        <div className="main">
+          <CompareContainer  
+            display={ display } 
+            handleCompare={this.handleCompare} 
+            avgCard={ avgCard } />
+          <CardContainer data={ data } handleCompare={this.handleCompare} />
+        </div>
       </div>
     );
   }

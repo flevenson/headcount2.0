@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import Card from './Card';
 import CompareCard from './CompareCard';
+import './CompareContainer.css';
 
 
 const CompareContainer = ( { display, handleCompare, avgCard} ) => {
@@ -13,26 +14,27 @@ const CompareContainer = ( { display, handleCompare, avgCard} ) => {
       className={'card' + [comparison]} 
       key={counter++} 
       handleCompare={ handleCompare }/>;
-    })
+  });
 
-    if (display.length === 1) {
+  if (display.length === 1) {
     return (
-      <div>
+      <div className='compare-container'>
         { comparedCards }
       </div>
-    )} else if (display.length === 2) {
-      return (
-        <div>
+    ); 
+  } else if (display.length === 2) {
+    return (
+      <div className='compare-container'>
         { comparedCards }
         <CompareCard avgCard = { avgCard } />
-        </div> 
-      )
-    } else {
-      return (
-        <div>
-        </div> 
-      )
-    }
+      </div> 
+    );
+  } else {
+    return (
+      <div>
+      </div> 
+    );
+  }
   
 
 };

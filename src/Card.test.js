@@ -20,8 +20,11 @@ describe('Card', () => {
     }
     ];
     
-    const wrapper = shallow(<Card {...mockData[0]} /> );
 
+    const wrapper = shallow(<Card {...mockData[0]} /> );
+    const div = wrapper.find('div');
+    div.simulate('click');
+    expect(wrapper).toMatchSnapshot();
   });
 
 
