@@ -7,17 +7,17 @@ const CompareCard = ( { avgCard }) => {
   let avgCardValues = Object.values(avgCard);
 
   return (
-    <div>
-      <h3>{avgCardKeys[0]} : {avgCardValues[0]}</h3>
-      <h3>{avgCardKeys[1]} : {avgCardValues[1]}</h3>
-      <h3>{avgCardKeys[2]} : {avgCardValues[2]}</h3>
+    <div className='card-div'>
+      <h3 className='location'>{avgCardKeys[0]} : {avgCardValues[0]}</h3>
+      <h3 className='location'>{avgCardKeys[1]} : {avgCardValues[1]}</h3>
+      <h3 className='location'>{avgCardKeys[2]} : {avgCardValues[2]}</h3>
 
     </div>
   );
 };
 
 CompareCard.propTypes = {
-  avgCard: Proptypes.array.isRequired
+  avgCard: Proptypes.object.isRequired
 };
 
 export default CompareCard;

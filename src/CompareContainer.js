@@ -6,23 +6,33 @@ import CompareCard from './CompareCard';
 
 const CompareContainer = ( { display, handleCompare, avgCard} ) => {
   let counter = 0;
-
   let comparedCards = display.map( comparison => {
-
+  
     return <Card 
       {...comparison} 
       className={'card' + [comparison]} 
       key={counter++} 
       handleCompare={ handleCompare }/>;
-  }
+    })
 
-  );
-  return (
-    <div>
-      { comparedCards }
-      <CompareCard avgCard={ avgCard }/>
-    </div>
-  );
+    if (display.length === 1) {
+    return (
+      <div>
+        { comparedCards }
+      </div>
+    )} else if (display.length === 2) {
+      return (
+        <div>
+        { comparedCards }
+        <CompareCard avgCard = { avgCard } />
+        </div> 
+      )
+    } else {
+      return (
+        <div>
+        </div> 
+      )
+    }
   
 
 };
@@ -31,7 +41,7 @@ const CompareContainer = ( { display, handleCompare, avgCard} ) => {
 CompareContainer.propTypes = {
   display: PropTypes.array.isRequired,
   handleCompare: PropTypes.func,
-  avgCard: PropTypes.array.isRequired
+  avgCard: PropTypes.object.isRequired
 };
 
 export default CompareContainer;
