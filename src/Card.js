@@ -9,8 +9,8 @@ const Card = ({stats, location, handleCompare}) => {
 
   const SchoolScore = yearData.map(point => {
     return <p className={ (stats[point] < .5) 
-      ? 'year-and-data-red' 
-      : 'year-and-data-green'}
+      ? 'year-and-data-below' 
+      : 'year-and-data-above'}
     key={cardCounter++}
     name={location}>
       {point} : {stats[point]} </p>;

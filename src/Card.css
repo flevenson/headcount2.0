@@ -3,24 +3,25 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  width: 95%;
-  margin: 8px;
+  min-width: 220px;
+  margin: 8px auto;
   height: 270px;
   box-shadow: 0 0 5px 1px #0000006e;
   border-radius: 5px;
-  background-color: #2665D842
+  background-color: #9AC5C5
 }
 
 .location {
   font-weight: 600;
   margin-bottom: 18px;
   font-size: 17px;
+  color: #FFF;
 }
 
-.year-and-data-red {
-  color: red;
+.year-and-data-below {
+  color: #FFF7B2;
 }
 
-.year-and-data-green {
-  color: green;
+.year-and-data-above {
+  color: #009E9E;
 }
