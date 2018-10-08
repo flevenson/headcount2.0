@@ -21,9 +21,14 @@ describe('Card', () => {
     ];
     
 
-    const wrapper = shallow(<Card {...mockData[0]} /> );
-    const div = wrapper.find('div');
-    div.simulate('click');
+    const wrapper = shallow(<Card {...mockData[0]} handleCompare={jest.fn()}/> );
+    const mockEvent = {
+      target: {
+        getAttribute: () => 'Turing'
+       }
+    }
+
+     wrapper.simulate('click', mockEvent);
     expect(wrapper).toMatchSnapshot();
   });
 

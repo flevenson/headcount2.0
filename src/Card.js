@@ -16,14 +16,14 @@ const Card = ({stats, location, handleCompare}) => {
       {point} : {stats[point]} </p>;
   });
 
-  this.handleClick = (event) => {
+  const handleClick = (event) => {
     let schoolName = event.target.getAttribute('name');
     handleCompare(schoolName);
     
   };
 
   return (
-    <div className='card-div' name={location} onClick={this.handleClick}>
+    <div className='card-div' name={location} onClick={handleClick}>
       <h1 className='location' name={location}>{location}</h1>
       {SchoolScore}
     </div>

@@ -23,10 +23,11 @@ const CompareContainer = ( { display, handleCompare, avgCard} ) => {
       </div>
     ); 
   } else if (display.length === 2) {
+      let compareCard =  <CompareCard avgCard = { avgCard } />
+      comparedCards = [ comparedCards[0], compareCard, comparedCards[1] ];
     return (
       <div className='compare-container'>
         { comparedCards }
-        <CompareCard avgCard = { avgCard } />
       </div> 
     );
   } else {
